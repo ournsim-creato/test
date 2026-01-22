@@ -1,0 +1,36 @@
+package edu.lu.css.java;
+import java.util.Scanner;
+
+public class Sum {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		displayInstructions();
+		int total = calculateSum(scanner);
+
+		System.out.println("Final sum: " + total);
+		scanner.close();
+	}
+ 
+	
+	private static void displayInstructions() {
+		System.out.println("Enter numbers to sum. Type 0 to stop.");
+	}
+
+	
+	private static int calculateSum(Scanner scanner) {
+		int sum = 0;
+		for (;;) {
+			System.out.print("Enter a number: ");
+			int next = scanner.nextInt();
+
+			if (next == 0) {  // 0 stops the input
+				break; 
+			}
+
+			sum += next; 
+			System.out.println("Number entered: " + next + ", Current sum: " + sum);
+		}
+		return sum;
+	}
+} 
